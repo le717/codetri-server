@@ -1,6 +1,10 @@
 # CodeTri-Server
-Just my server config :)
+> CodeTri.net server configuration
 
-Crated by [Tribex](https://github.com/Tribex).
+## License
 
-2017
+Initial version by [Tribex](https://github.com/Tribex).
+
+2017-2018
+
+[Unlicense](LICENSE)
