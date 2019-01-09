@@ -9,4 +9,4 @@ services:
   vss365today:
     image: vss365today:latest
     ports:
-      - 127.0.0.1:5001:5001
+      - 127.0.0.1:5001:5000
