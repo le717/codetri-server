@@ -1,0 +1,12 @@
+version: '3.6'
+
+services:
+  areyouonadate:
+    image: areyouona-date:latest
+    ports:
+      - 127.0.0.1:5000:5000
+
+  vss365today:
+    image: vss365today:latest
+    ports:
+      - 127.0.0.1:5001:5001
