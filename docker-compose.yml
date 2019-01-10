@@ -11,4 +11,4 @@ services:
     ports:
       - 127.0.0.1:5001:5000
     volumes:
-      - /usr/codetri/vss-365-today:/app/db
+      - /usr/codetri/vss-365-today/db:/app/db
