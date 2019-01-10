@@ -10,5 +10,5 @@ services:
     image: vss365today:latest
     ports:
       - 127.0.0.1:5001:5000
-    volume:
+    volumes:
       - /usr/codetri/vss-365-today:/app/db
