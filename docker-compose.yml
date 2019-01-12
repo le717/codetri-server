@@ -20,3 +20,11 @@ services:
     restart: unless-stopped
     volumes:
       - /usr/codetri/vss-365-today/db:/app/db
+
+  codetriangle:
+    image: codetriangle:latest
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:5002:80
+    volumes:
+    - /usr/codetri/codetriangle:/var/www/html
