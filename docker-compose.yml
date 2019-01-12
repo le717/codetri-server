@@ -6,8 +6,8 @@ services:
     ports:
       - 127.0.0.1:5000:5000
 
-  vss365today:
-    image: vss365today:latest
+  vss365today-web:
+    image: vss365today-web:latest
     ports:
       - 127.0.0.1:5001:5000
     volumes:
