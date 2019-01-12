@@ -3,12 +3,20 @@ version: '3.6'
 services:
   areyouonadate:
     image: areyouona-date:latest
+    restart: unless-stopped
     ports:
       - 127.0.0.1:5000:5000
 
   vss365today-web:
     image: vss365today-web:latest
+    restart: unless-stopped
     ports:
       - 127.0.0.1:5001:5000
+    volumes:
+      - /usr/codetri/vss-365-today/db:/app/db
+
+  vss365today-twitter:
+    image: vss365today-twitter:latest
+    restart: unless-stopped
     volumes:
       - /usr/codetri/vss-365-today/db:/app/db
