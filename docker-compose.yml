@@ -14,3 +14,14 @@ services:
       - 127.0.0.1:5000:80
     volumes:
     - /usr/codetri/codetriangle:/var/www/html
+
+  ghost:
+    image: ghost:latest
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:5003:2368
+    volumes:
+    - /usr/codetri/ghost:/var/lib/ghost/content
+    environment:
+      NODE_ENV: production
+      url: http://blog.codetri.net
