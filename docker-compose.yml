@@ -1,12 +1,6 @@
 version: '3.6'
 
 services:
-  areyouonadate:
-    image: areyouona-date:latest
-    restart: unless-stopped
-    ports:
-      - 127.0.0.1:5001:5000
-
   codetriangle:
     image: codetriangle:latest
     restart: unless-stopped
@@ -14,6 +8,23 @@ services:
       - 127.0.0.1:5000:80
     volumes:
     - /usr/codetri/codetriangle:/var/www/html
+
+  areyouonadate:
+    image: areyouona-date:latest
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:5001:5000
+
+  vss365today:
+    image: vss365today:latest
+    restart: unless-stopped
+    volumes:
+      - /usr/codetri/vss365-today:/app
+    ports:
+      - 127.0.0.1:5002:5000
+    entrypoint:
+      - sh
+      - ./run-flask.sh
 
   ghost:
     image: ghost:latest
