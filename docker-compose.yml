@@ -3,6 +3,7 @@ version: '3.7'
 services:
   # nginx:
   #   image: nginx:alpine
+  #   container_name: nginx
   #   restart: unless-stopped
   #   volumes:
   #     - /var/log/nginx:/var/log/nginx
@@ -13,6 +14,7 @@ services:
 
   codetriangle:
     image: codetriangle:latest
+    container_name: codetriangle
     restart: unless-stopped
     ports:
       - 127.0.0.1:5000:80
@@ -21,12 +23,14 @@ services:
 
   areyouonadate:
     image: areyouona-date:latest
+    container_name: areyouonadate
     restart: unless-stopped
     ports:
       - 127.0.0.1:5001:5000
 
   vss365today:
     image: vss365today:latest
+    container_name: vss365today
     restart: unless-stopped
     volumes:
       - /usr/codetri/vss365-today:/app
@@ -38,6 +42,7 @@ services:
 
   ghost:
     image: ghost:latest
+    container_name: ghost
     restart: unless-stopped
     ports:
       - 127.0.0.1:5003:2368
