@@ -1,6 +1,15 @@
 version: '3.7'
 
 services:
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    volumes:
+      - /usr/codetri/codetri-server/sites-available:/etc/nginx/sites-available
+      - /usr/codetri/codetri-server/conf.d:/etc/nginx/conf.d
+    ports:
+      - 80:80
+
   codetriangle:
     image: codetriangle:latest
     restart: unless-stopped
