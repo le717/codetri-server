@@ -51,3 +51,16 @@ services:
     environment:
       NODE_ENV: production
       url: http://blog.codetri.net
+
+  bcm:
+    image: ghost:latest
+    container_name: bcm
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:5004:2368
+    volumes:
+    - /usr/codetri/bcm:/var/lib/ghost/content
+    environment:
+      NODE_ENV: production
+      url: http://bcm.codetri.net
+
