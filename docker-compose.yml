@@ -54,6 +54,16 @@ services:
       NODE_ENV: production
       url: http://blog.codetri.net
 
+  postfix:
+    image: boky/postfix
+    container_name: email-server
+    ports:
+      - 127.0.0.1:1587:587
+    environment:
+      - HOSTNAME=email-server
+      - ALLOWED_SENDER_DOMAINS=vss365today.com
+    networks:
+      - codetriangle
 
 networks:
   codetriangle:
