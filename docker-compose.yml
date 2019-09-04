@@ -61,7 +61,7 @@ services:
       - 127.0.0.1:1587:587
     environment:
       - HOSTNAME=email-server
-      - ALLOWED_SENDER_DOMAINS=vss365today.com
+      - ALLOWED_SENDER_DOMAINS=vss365today.com fromabcthroughxyz.com
     networks:
       - codetriangle
 
