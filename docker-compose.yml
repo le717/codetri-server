@@ -59,6 +59,8 @@ services:
     container_name: email-server
     ports:
       - 127.0.0.1:1587:587
+    volumes:
+      - /usr/codetri/email/keys:/etc/opendkim/keys
     environment:
       - HOSTNAME=email-server
       - ALLOWED_SENDER_DOMAINS=vss365today.com fromabcthroughxyz.com
