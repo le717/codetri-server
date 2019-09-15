@@ -59,7 +59,7 @@ services:
     container_name: interview
     restart: unless-stopped
     volumes:
-      - /usr/codetri/gs-job-interview-2019:/app
+      - /usr/codetri/gs-job-interview-2019/restful_api:/app
     ports:
       - 127.0.0.1:5004:5000
     entrypoint:
