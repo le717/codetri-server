@@ -63,7 +63,7 @@ services:
       - /usr/codetri/email/keys:/etc/opendkim/keys
     environment:
       - HOSTNAME=email-server
-      - ALLOWED_SENDER_DOMAINS=vss365today.com fromabcthrough.xyz
+      - ALLOWED_SENDER_DOMAINS=vss365today.com
     networks:
       - codetriangle
 
