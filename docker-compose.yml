@@ -7,10 +7,10 @@ services:
   #   restart: unless-stopped
   #   volumes:
   #     - /var/log/nginx:/var/log/nginx
-  #     - /usr/codetri/codetri-server/sites-available:/etc/nginx/sites-available
-  #     - /usr/codetri/codetri-server/conf.d:/etc/nginx/conf.d
+  #     - ../sites-available:/etc/nginx/sites-available
+  #     - ../conf.d:/etc/nginx/conf.d
   #   ports:
-  #     - 127.0.0.1:80:80
+  #     - 80:80
 
   codetriangle:
     image: codetriangle:latest
@@ -19,7 +19,7 @@ services:
     ports:
       - 127.0.0.1:5000:80
     volumes:
-    - /usr/codetri/codetriangle:/var/www/html
+    - ../codetriangle:/var/www/html
 
   areyouonadate:
     image: areyouona-date:latest
@@ -33,7 +33,7 @@ services:
     container_name: vss365today
     restart: unless-stopped
     volumes:
-      - /usr/codetri/vss365-today:/app
+      - ../vss365-today:/app
     ports:
       - 127.0.0.1:5002:5000
     entrypoint:
@@ -49,7 +49,7 @@ services:
     ports:
       - 127.0.0.1:5003:2368
     volumes:
-    - /usr/codetri/ghost:/var/lib/ghost/content
+    - ../ghost:/var/lib/ghost/content
     environment:
       NODE_ENV: production
       url: http://blog.codetri.net
@@ -60,8 +60,8 @@ services:
     ports:
       - 127.0.0.1:1587:587
     volumes:
-      - /usr/codetri/email/keys:/etc/opendkim/keys
-      - /usr/codetri/email/startup-scripts:/docker-init.db/
+      - ../email/keys:/etc/opendkim/keys
+      - ../email/startup-scripts:/docker-init.db/
     environment:
       - HOSTNAME=mail.codetri.net
       - ALLOWED_SENDER_DOMAINS=vss365today.com
