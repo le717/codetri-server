@@ -6,7 +6,7 @@ services:
   #   container_name: nginx
   #   restart: unless-stopped
   #   volumes:
-  #     - /var/log/nginx:/var/log/nginx
+  #     - ../nginx/log:/var/log/nginx
   #     - ../sites-available:/etc/nginx/sites-available
   #     - ../conf.d:/etc/nginx/conf.d
   #   ports:
