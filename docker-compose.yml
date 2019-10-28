@@ -1,16 +1,18 @@
 version: '3.7'
 
 services:
-  # nginx:
-  #   image: nginx:alpine
-  #   container_name: nginx
-  #   restart: unless-stopped
-  #   volumes:
-  #     - ../nginx/log:/var/log/nginx
-  #     - ../sites-available:/etc/nginx/sites-available
-  #     - ../conf.d:/etc/nginx/conf.d
-  #   ports:
-  #     - 80:80
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ../nginx/log:/var/log/nginx
+      - ../sites-available:/etc/nginx/sites-available
+      - ../conf.d:/etc/nginx/conf.d
+    networks:
+      - codetriangle
 
   codetriangle:
     image: codetriangle:latest
@@ -19,7 +21,9 @@ services:
     ports:
       - 127.0.0.1:5000:80
     volumes:
-    - ../codetriangle:/var/www/html
+      - ../codetriangle:/var/www/html
+    networks:
+      - codetriangle
 
   areyouonadate:
     image: areyouona-date:latest
@@ -27,6 +31,8 @@ services:
     restart: unless-stopped
     ports:
       - 127.0.0.1:5001:5000
+    networks:
+      - codetriangle
 
   vss365today:
     image: vss365today:latest
@@ -53,6 +59,8 @@ services:
     environment:
       NODE_ENV: production
       url: http://blog.codetri.net
+    networks:
+      - codetriangle
 
   postfix:
     image: boky/postfix
