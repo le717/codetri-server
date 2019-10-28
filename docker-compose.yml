@@ -1,18 +1,18 @@
 version: '3.7'
 
 services:
-  nginx:
-    image: nginx:alpine
-    container_name: nginx
-    restart: unless-stopped
-    ports:
-      - 80:80
-    volumes:
-      - ../nginx/log:/var/log/nginx
-      - ../sites-available:/etc/nginx/sites-available
-      - ../conf.d:/etc/nginx/conf.d
-    networks:
-      - codetriangle
+  # nginx:
+  #   image: nginx:latest
+  #   container_name: nginx
+  #   restart: unless-stopped
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ../nginx/log:/var/log/nginx
+  #     - ../sites-available:/etc/nginx/sites-available
+  #     - ../conf.d:/etc/nginx/conf.d
+  #   networks:
+  #     - codetriangle
 
   codetriangle:
     image: codetriangle:latest
