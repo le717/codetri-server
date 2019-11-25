@@ -72,7 +72,7 @@ services:
       - ../email/startup-scripts:/docker-init.db/
     environment:
       - HOSTNAME=mail.codetri.net
-      - ALLOWED_SENDER_DOMAINS=vss365today.com
+      - ALLOWED_SENDER_DOMAINS=vss365today.com codetri.net
     networks:
       - codetriangle
 
