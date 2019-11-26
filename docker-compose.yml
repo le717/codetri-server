@@ -44,7 +44,7 @@ services:
       - 127.0.0.1:5002:5000
     entrypoint:
       - sh
-      - ./run-flask.sh
+      - ./run-app.sh
     networks:
       - codetriangle
 
