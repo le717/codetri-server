@@ -40,8 +40,23 @@ services:
     restart: unless-stopped
     volumes:
       - ../vss365-today:/app
+      - ../vss365-today-api/db:/app/db
     ports:
       - 127.0.0.1:5002:5000
+    entrypoint:
+      - sh
+      - ./run-app.sh
+    networks:
+      - codetriangle
+
+  vss365today-api:
+    image: vss365today-api:latest
+    container_name: vss365today-api
+    restart: unless-stopped
+    volumes:
+      - ../vss365-today-api:/app
+    ports:
+      - 127.0.0.1:5003:5000
     entrypoint:
       - sh
       - ./run-app.sh
