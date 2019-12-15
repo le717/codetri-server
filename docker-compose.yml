@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   # nginx:
-  #   image: nginx:latest
+  #   image: nginx:alpine
   #   container_name: nginx
   #   restart: unless-stopped
   #   ports:
@@ -11,8 +11,6 @@ services:
   #     - ../nginx/log:/var/log/nginx
   #     - ../sites-available:/etc/nginx/sites-available
   #     - ../conf.d:/etc/nginx/conf.d
-  #   networks:
-  #     - codetriangle
 
   codetriangle:
     image: codetriangle:latest
@@ -22,8 +20,6 @@ services:
       - 127.0.0.1:5000:80
     volumes:
       - ../codetriangle:/var/www/html
-    networks:
-      - codetriangle
 
   areyouonadate:
     image: areyouona-date:latest
@@ -31,37 +27,6 @@ services:
     restart: unless-stopped
     ports:
       - 127.0.0.1:5001:5000
-    networks:
-      - codetriangle
-
-  vss365today:
-    image: vss365today:latest
-    container_name: vss365today
-    restart: unless-stopped
-    volumes:
-      - ../vss365-today:/app
-      - ../vss365-today-api/db:/app/db
-    ports:
-      - 127.0.0.1:5002:5000
-    entrypoint:
-      - sh
-      - ./run-app.sh
-    networks:
-      - codetriangle
-
-  vss365today-api:
-    image: vss365today-api:latest
-    container_name: vss365today-api
-    restart: unless-stopped
-    volumes:
-      - ../vss365-today-api:/app
-    ports:
-      - 127.0.0.1:5003:5000
-    entrypoint:
-      - sh
-      - ./run-app.sh
-    networks:
-      - codetriangle
 
   ghost:
     image: ghost:latest
@@ -74,23 +39,3 @@ services:
     environment:
       NODE_ENV: production
       url: http://blog.codetri.net
-    networks:
-      - codetriangle
-
-  postfix:
-    image: boky/postfix
-    container_name: mail.codetri.net
-    ports:
-      - 127.0.0.1:1587:587
-    volumes:
-      - ../email/keys:/etc/opendkim/keys
-      - ../email/startup-scripts:/docker-init.db/
-    environment:
-      - HOSTNAME=mail.codetri.net
-      - ALLOWED_SENDER_DOMAINS=vss365today.com codetri.net
-    networks:
-      - codetriangle
-
-networks:
-  codetriangle:
-    driver: bridge
