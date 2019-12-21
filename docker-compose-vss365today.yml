@@ -8,7 +8,6 @@ services:
     volumes:
       - ../vss365-today:/app
       - ../vss365-today/log:/var/log
-      - ../vss365-today-api/db:/app/db
     ports:
       - 127.0.0.1:5002:5000
     entrypoint:
