@@ -31,19 +31,36 @@ services:
     networks:
       - vss365today
 
-  postfix:
-    image: boky/postfix
-    container_name: mail.codetri.net
-    ports:
-      - 127.0.0.1:1587:587
-    volumes:
-      - ../email/keys:/etc/opendkim/keys
-      - ../email/startup-scripts:/docker-init.db/
-    environment:
-      - HOSTNAME=mail.codetri.net
-      - ALLOWED_SENDER_DOMAINS=codetri.net
-    networks:
-      - vss365today
+  # postfix:
+  #   image: boky/postfix
+  #   container_name: mail.codetri.net
+  #   ports:
+  #     - 127.0.0.1:1587:587
+  #   volumes:
+  #     - ../email/keys:/etc/opendkim/keys
+  #     - ../email/startup-scripts:/docker-init.db/
+  #   environment:
+  #     - HOSTNAME=mail.codetri.net
+  #     - ALLOWED_SENDER_DOMAINS=codetri.net
+  #   networks:
+  #     - vss365today
+
+    mariadb:
+      image: mariadb:10.4
+      container_name: vss365today-db
+      restart: unless-stopped
+      volumes:
+        - ../vss365-today-api/db:/docker-entrypoint-initdb.d
+        - ../vss365-today-api/secrets:/secrets
+      ports:
+        - 127.0.0.1:3306:3306
+      environment:
+        - MYSQL_RANDOM_ROOT_PASSWORD=yes
+        - MYSQL_DATABASE=vss365today
+        - MYSQL_USER_FILE=/secrets/mysql_user
+        - MYSQL_PASSWORD_FILE=/secrets/mysql_password
+      networks:
+        - vss365today
 
 networks:
   vss365today:
