@@ -52,6 +52,7 @@ services:
     volumes:
       - ../vss365-today-api/db:/docker-entrypoint-initdb.d
       - ../vss365-today-api/secrets:/secrets
+      - ../vss365-today-db/:/var/lib/mysql
     ports:
       - 127.0.0.1:3306:3306
     environment:
