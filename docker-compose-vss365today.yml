@@ -23,6 +23,7 @@ services:
     volumes:
       - ../vss365-today-api:/app
       - ../vss365-today-api/log:/var/log
+      - ../vss365-today/images:/app/src/static/prompt-images
     ports:
       - 127.0.0.1:5003:5000
     entrypoint:
