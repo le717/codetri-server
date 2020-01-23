@@ -6,8 +6,8 @@ services:
     container_name: vss365today
     restart: unless-stopped
     volumes:
-      - ../vss365-today:/app
-      - ../vss365-today/log:/var/log
+      - ../../vss365-today:/app
+      - ../../vss365-today/log:/var/log
     ports:
       - 127.0.0.1:5002:5000
     entrypoint:
@@ -21,9 +21,9 @@ services:
     container_name: vss365today-api
     restart: unless-stopped
     volumes:
-      - ../vss365-today-api:/app
-      - ../vss365-today-api/log:/var/log
-      - ../vss365-today/src/static/prompt-images:/app/images
+      - ../../vss365-today-api:/app
+      - ../../vss365-today-api/log:/var/log
+      - ../../vss365-today/src/static/prompt-images:/app/images
     ports:
       - 127.0.0.1:5003:5000
     entrypoint:
@@ -48,9 +48,9 @@ services:
     container_name: vss365today-db
     restart: unless-stopped
     volumes:
-      - ../vss365-today-api/db:/docker-entrypoint-initdb.d
-      - ../vss365-today-api/secrets:/secrets
-      - ../vss365-today-db/:/var/lib/mysql
+      - ../../vss365-today-api/db:/docker-entrypoint-initdb.d
+      - ../../vss365-today-api/secrets:/secrets
+      - ../../vss365-today-db/:/var/lib/mysql
     ports:
       - 127.0.0.1:3306:3306
     environment:
