@@ -35,11 +35,12 @@ services:
   postfix:
     image: boky/postfix
     container_name: mail.codetri.net
+    restart: unless-stopped
     ports:
       - 127.0.0.1:1587:587
     environment:
       - HOSTNAME=mail.codetri.net
-      - ALLOWED_SENDER_DOMAINS=codetri.net
+      - ALLOWED_SENDER_DOMAINS=mail.codetri.net
     networks:
       - vss365today
 
