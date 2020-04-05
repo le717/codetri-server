@@ -26,6 +26,9 @@ services:
       - ../../vss365-today/src/static/prompt-images:/app/images
     ports:
       - 127.0.0.1:5003:5000
+    environment:
+      - FLASK_ENV=production
+      - DOCKER_SECRETS_PATH=/app/secrets
     entrypoint:
       - sh
       - ./run-app.sh
@@ -56,9 +59,9 @@ services:
       - 127.0.0.1:3306:3306
     environment:
       - MYSQL_DATABASE=vss365today
-      - MYSQL_USER_FILE=/secrets/mysql_user
-      - MYSQL_PASSWORD_FILE=/secrets/mysql_password
-      - MYSQL_ROOT_PASSWORD_FILE=/secrets/mysql_password_root
+      - MYSQL_USER_FILE=/secrets/DB_USERNAME
+      - MYSQL_PASSWORD_FILE=/secrets/DB_PASSWORD
+      - MYSQL_ROOT_PASSWORD_FILE=/secrets/DB_PASSWORD_ROOT
     networks:
       - vss365today
 
