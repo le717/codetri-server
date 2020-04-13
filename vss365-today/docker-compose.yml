@@ -10,6 +10,9 @@ services:
       - ../../vss365-today/log:/var/log
     ports:
       - 127.0.0.1:5002:5000
+    environment:
+      - FLASK_ENV=production
+      - DOCKER_SECRETS_PATH=/app/secrets
     entrypoint:
       - sh
       - ./run-app.sh
