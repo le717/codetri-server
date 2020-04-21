@@ -8,6 +8,7 @@ services:
     volumes:
       - ../../vss365-today:/app
       - ../../vss365-today/log:/var/log
+      - /app/app/static/build/
     ports:
       - 127.0.0.1:5002:5000
     environment:
