@@ -21,13 +21,6 @@ services:
     volumes:
       - ../codetriangle:/var/www/html
 
-  areyouonadate:
-    image: areyouona-date:latest
-    container_name: areyouonadate
-    restart: unless-stopped
-    ports:
-      - 127.0.0.1:5001:5000
-
   ghost:
     image: ghost:latest
     container_name: ghost
