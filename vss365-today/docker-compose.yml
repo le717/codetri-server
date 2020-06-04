@@ -1,13 +1,13 @@
 version: '3.7'
 
 services:
-  vss365today:
-    image: vss365today:latest
-    container_name: vss365today
+  vss365today-web:
+    image: vss365today-web:latest
+    container_name: vss365today-web
     restart: unless-stopped
     volumes:
-      - ../../vss365-today:/app
-      - ../../vss365-today/log:/var/log
+      - ../../vss365today/web:/app
+      - ../../vss365today/web/log:/var/log
     ports:
       - 127.0.0.1:5002:5000
     environment:
@@ -24,9 +24,9 @@ services:
     container_name: vss365today-api
     restart: unless-stopped
     volumes:
-      - ../../vss365-today-api:/app
-      - ../../vss365-today-api/log:/var/log
-      - ../../vss365-today/src/static/prompt-images:/app/images
+      - ../../vss365today/api:/app
+      - ../../vss365today/api/log:/var/log
+      - ../../vss365today/web/src/static/prompt-images:/app/images
     ports:
       - 127.0.0.1:5003:5000
     environment:
@@ -38,14 +38,29 @@ services:
     networks:
       - vss365today
 
+    # vss365today-finder:
+    #   image: vss365today-finder:latest
+    #   container_name: vss365today-finder
+    #   restart: unless-stopped
+    #   volumes:
+    #     - ../../vss365today/finder:/app
+    #   environment:
+    #     - FLASK_ENV=production
+    #     - DOCKER_SECRETS_PATH=/app/secrets
+    #   entrypoint:
+    #     - sh
+    #     - ./run-app.sh
+    #   networks:
+    #     - vss365today
+
   mariadb:
     image: mariadb:10.4
     container_name: vss365today-db
     restart: unless-stopped
     volumes:
-      - ../../vss365-today-api/db:/docker-entrypoint-initdb.d
-      - ../../vss365-today-api/secrets:/secrets
-      - ../../vss365-today-db/:/var/lib/mysql
+      - ../../vss365today/api/db:/docker-entrypoint-initdb.d
+      - ../../vss365today/api/secrets:/secrets
+      - ../../vss365today/db/:/var/lib/mysql
     ports:
       - 127.0.0.1:3306:3306
     environment:
