@@ -55,22 +55,22 @@ services:
     #     - vss365today
 
     vss365today-db:
-    image: mariadb:10.4
-    container_name: vss365today-db
-    restart: unless-stopped
-    volumes:
-      - ../../vss365today/api/db:/docker-entrypoint-initdb.d
-      - ../../vss365today/api/secrets:/secrets
-      - ../../vss365today/db/:/var/lib/mysql
-    ports:
-      - 127.0.0.1:3306:3306
-    environment:
-      - MYSQL_DATABASE=vss365today
-      - MYSQL_USER_FILE=/secrets/DB_USERNAME
-      - MYSQL_PASSWORD_FILE=/secrets/DB_PASSWORD
-      - MYSQL_ROOT_PASSWORD_FILE=/secrets/DB_PASSWORD_ROOT
-    networks:
-      - vss365today
+      image: mariadb:10.4
+      container_name: vss365today-db
+      restart: unless-stopped
+      volumes:
+        - ../../vss365today/api/db:/docker-entrypoint-initdb.d
+        - ../../vss365today/api/secrets:/secrets
+        - ../../vss365today/db/:/var/lib/mysql
+      ports:
+        - 127.0.0.1:3306:3306
+      environment:
+        - MYSQL_DATABASE=vss365today
+        - MYSQL_USER_FILE=/secrets/DB_USERNAME
+        - MYSQL_PASSWORD_FILE=/secrets/DB_PASSWORD
+        - MYSQL_ROOT_PASSWORD_FILE=/secrets/DB_PASSWORD_ROOT
+      networks:
+        - vss365today
 
 networks:
   vss365today:
