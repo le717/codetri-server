@@ -39,20 +39,22 @@ services:
     networks:
       - vss365today
 
-  # vss365today-finder:
-  #   image: vss365today-finder:latest
-  #   container_name: vss365today-finder
-  #   restart: unless-stopped
-  #   volumes:
-  #     - ../../vss365today/finder:/app
-  #   environment:
-  #     - FLASK_ENV=production
-  #     - DOCKER_SECRETS_PATH=/app/secrets
-  #   entrypoint:
-  #     - sh
-  #     - ./run-app.sh
-  #   networks:
-  #     - vss365today
+  vss365today-finder:
+    image: vss365today-finder:latest
+    container_name: vss365today-finder
+    restart: unless-stopped
+    volumes:
+      - ../../vss365today/finder:/app
+    environment:
+      - FLASK_ENV=production
+      - DOCKER_SECRETS_PATH=/app/secrets
+      - SCHEDULE_TIMES=["05 4", "25 4", "45 4", "05 5"]
+    entrypoint:
+      - python
+      - ./finder.py
+      - --schedule
+    networks:
+      - vss365today
 
   vss365today-db:
     image: mariadb:10.4
