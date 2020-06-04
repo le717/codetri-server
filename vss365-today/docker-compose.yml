@@ -54,7 +54,7 @@ services:
     #   networks:
     #     - vss365today
 
-  mariadb:
+    vss365today-db:
     image: mariadb:10.4
     container_name: vss365today-db
     restart: unless-stopped
