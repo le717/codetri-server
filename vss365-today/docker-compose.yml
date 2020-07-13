@@ -46,9 +46,11 @@ services:
     restart: unless-stopped
     volumes:
       - ../../vss365today/finder:/app
+      - ../../vss365today/static/downloads:/app/downloads
     environment:
       - FLASK_ENV=production
       - DOCKER_SECRETS_PATH=/app/secrets
+      - DOWNLOADS_PATH=/app/downloads
       - SCHEDULE_TIMES=["05 2", "25 2", "45 2", "05 3"]
     entrypoint:
       - python
