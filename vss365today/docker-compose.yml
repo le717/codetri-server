@@ -33,7 +33,7 @@ services:
       - ../../vss365today/static/images:/app/images
       - ../../vss365today/static/downloads:/app/downloads
     ports:
-      - 127.0.0.1:5003:5000
+      - 127.0.0.1:5003:80
     environment:
       - FLASK_ENV=production
       - DOCKER_SECRETS_PATH=/app/secrets
