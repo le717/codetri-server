@@ -8,7 +8,7 @@ services:
     ports:
       - 127.0.0.1:5000:80
     volumes:
-      - ../codetriangle:/var/www/html
+      - ../codetriangle/main:/var/www/main
 
 #   ghost:
 #     image: ghost:latest
