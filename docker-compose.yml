@@ -21,4 +21,4 @@ services:
     - ../ghost:/var/lib/ghost/content
     environment:
       NODE_ENV: production
-      url: https://blog.codetri.net
+      url: http://blog.codetri.net
