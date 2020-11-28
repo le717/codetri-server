@@ -11,14 +11,14 @@ services:
       - ../codetriangle/main:/var/www/main
       - ../codetriangle/demo:/var/www/demo
 
-#   ghost:
-#     image: ghost:latest
-#     container_name: ghost
-#     restart: unless-stopped
-#     ports:
-#       - 127.0.0.1:5004:2368
-#     volumes:
-#     - ../ghost:/var/lib/ghost/content
-#     environment:
-#       NODE_ENV: production
-#       url: http://blog.codetri.net
+  ghost:
+    image: ghost:latest
+    container_name: ghost
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:5004:2368
+    volumes:
+    - ../ghost:/var/lib/ghost/content
+    environment:
+      NODE_ENV: production
+      url: https://blog.codetri.net
