@@ -55,7 +55,7 @@ services:
       - FLASK_ENV=production
       - DOCKER_SECRETS_PATH=/app/secrets
       - DOWNLOADS_PATH=/app/downloads
-      - SCHEDULE_TIMES=["45 1", "05 2", "25 2", "45 2", "05 3"]
+      - SCHEDULE_TIMES=["05 6", "25 6", "45 6", "05 7"]
     entrypoint:
       - python
       - ./finder.py
