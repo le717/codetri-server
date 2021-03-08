@@ -70,9 +70,7 @@ www.vss365today.com {
 # --- API
 api.vss365today.com {
 	header -server
-	encode gzip {
-		level 10
-	}
+	encode gzip
 
 	reverse_proxy 127.0.0.1:5003
 }
