@@ -4,7 +4,7 @@ codetri.net {
 	encode gzip
 
 	file_server {
-		root /root/sites/codetriangle/main
+		root /var/www/codetri
 		hide .git
 	}
 
@@ -85,7 +85,7 @@ static.vss365today.com {
 
 	# Serve the rest of the files
 	file_server {
-		root /root/sites/vss365today/static
+		root /var/www/vss365today/static
 		hide /images/temp
 	}
 }
