@@ -3,6 +3,11 @@ codetri.net {
 	header -server
 	encode gzip
 
+	log {
+		output file /var/log/codetri.log
+		format console
+	}
+
 	file_server {
 		root /var/www/codetri
 		hide .git
@@ -22,6 +27,11 @@ demo.codetri.net {
 	header -server
 	header -x-powered-by
 	encode gzip
+
+	log {
+		output file /var/log/codetri-playground.log
+		format console
+	}
 
 	reverse_proxy 127.0.0.1:5000
 }
@@ -60,6 +70,11 @@ vss365today.com {
 	header -server
 	encode gzip
 
+	log {
+		output file /var/log/vss365today.log
+		format console
+	}
+
 	reverse_proxy 127.0.0.1:5002
 }
 www.vss365today.com {
@@ -72,6 +87,11 @@ api.vss365today.com {
 	header -server
 	encode gzip
 
+	log {
+		output file /var/log/vss365today-api.log
+		format console
+	}
+
 	reverse_proxy 127.0.0.1:5003
 }
 
@@ -82,6 +102,11 @@ static.vss365today.com {
 
 	# Redirect the root url to the main site
 	redir / https://vss365today.com{uri} permanent
+
+	log {
+		output file /var/log/vss365today-static.log
+		format console
+	}
 
 	# Serve the rest of the files
 	file_server {
