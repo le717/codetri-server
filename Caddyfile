@@ -1,0 +1,91 @@
+# -- CodeTri.net
+codetri.net {
+	header -server
+	encode gzip
+
+	file_server {
+		root /root/sites/codetriangle/main
+		hide .git
+	}
+
+	handle_errors {
+		redir https://codetri.net/404.html
+	}
+}
+www.codetri.net {
+	header -server
+	redir https://codetri.net{uri} permanent
+}
+
+# --- CodeTri Playground
+demo.codetri.net {
+	header -server
+	header -x-powered-by
+	encode gzip
+
+	reverse_proxy 127.0.0.1:5000
+}
+
+# --- CodeTri Blog
+blog.codetri.net {
+	header -server
+	header -x-powered-by
+	encode gzip
+
+	# Increase file upload size
+	request_body {
+		max_size 100MB
+	}
+
+	reverse_proxy 127.0.0.1:5004
+}
+
+# --- CodeTri Podcast
+podcast.codetri.net {
+	redir https://anchor.fm/cely717 303
+}
+
+# -- fromabcthrough.xyz
+fromabcthrough.xyz {
+	header -server
+	redir https://codetri.net{uri} permanent
+}
+www.fromabcthrough.xyz {
+	header -server
+	redir https://codetri.net{uri} permanent
+}
+
+# -- vss365today.com
+vss365today.com {
+	header -server
+	encode gzip
+
+	reverse_proxy 127.0.0.1:5002
+}
+www.vss365today.com {
+	header -server
+	redir https://vss365today.com{uri} permanent
+}
+
+# --- API
+api.vss365today.com {
+	header -server
+	encode gzip
+
+	reverse_proxy 127.0.0.1:5003
+}
+
+# --- Static files
+static.vss365today.com {
+	header -server
+	encode gzip
+
+	# Redirect the root url to the main site
+	redir / https://vss365today.com{uri} permanent
+
+	# Serve the rest of the files
+	file_server {
+		root /root/sites/vss365today/static
+		hide /images/temp
+	}
+}
