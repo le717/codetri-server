@@ -4,7 +4,7 @@ codetri.net {
 	encode gzip
 
 	log {
-		output file /var/log/codetri.log
+		output file /var/log/caddy/codetri.log
 		format console
 	}
 
@@ -29,7 +29,7 @@ demo.codetri.net {
 	encode gzip
 
 	log {
-		output file /var/log/codetri-playground.log
+		output file /var/log/caddy/codetri-playground.log
 		format console
 	}
 
@@ -71,7 +71,7 @@ vss365today.com {
 	encode gzip
 
 	log {
-		output file /var/log/vss365today.log
+		output file /var/log/caddy/vss365today.log
 		format console
 	}
 
@@ -88,7 +88,7 @@ api.vss365today.com {
 	encode gzip
 
 	log {
-		output file /var/log/vss365today-api.log
+		output file /var/log/caddy/vss365today-api.log
 		format console
 	}
 
@@ -104,7 +104,7 @@ static.vss365today.com {
 	redir / https://vss365today.com{uri} permanent
 
 	log {
-		output file /var/log/vss365today-static.log
+		output file /var/log/caddy/vss365today-static.log
 		format console
 	}
 
