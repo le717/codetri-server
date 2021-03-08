@@ -85,7 +85,7 @@ static.vss365today.com {
 
 	# Serve the rest of the files
 	file_server {
-		root /var/www/vss365today/static
+		root /var/www/vss365today
 		hide /images/temp
 	}
 }
