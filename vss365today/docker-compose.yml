@@ -9,8 +9,8 @@ services:
       - ../../vss365today/web:/app
       - ../../vss365today/web/log:/var/log
       - ../../vss365today/secrets:/app/secrets
-      - ../../vss365today/static/images:/app/src/static/prompt-images
-      - ../../vss365today/static/downloads:/app/src/static/downloads
+      - /var/www/vss365today/static/images:/app/src/static/prompt-images
+      - /var/www/vss365today/static/downloads:/app/src/static/downloads
     ports:
       - 127.0.0.1:5002:80
     environment:
@@ -30,8 +30,8 @@ services:
       - ../../vss365today/api:/app
       - ../../vss365today/api/log:/var/log
       - ../../vss365today/secrets:/app/secrets
-      - ../../vss365today/static/images:/app/images
-      - ../../vss365today/static/downloads:/app/downloads
+      - /var/www/vss365today/static/images:/app/images
+      - /var/www/vss365today/static/downloads:/app/downloads
     ports:
       - 127.0.0.1:5003:80
     environment:
@@ -50,7 +50,7 @@ services:
     volumes:
       - ../../vss365today/finder:/app
       - ../../vss365today/secrets:/app/secrets
-      - ../../vss365today/static/downloads:/app/downloads
+      - /var/www/vss365today/static/downloads:/app/downloads
     environment:
       - FLASK_ENV=production
       - DOCKER_SECRETS_PATH=/app/secrets
