@@ -5,7 +5,7 @@ codetri.net {
 
 	log {
 		output file /var/log/caddy/codetri.log
-		format console
+		format json
 	}
 
 	file_server {
@@ -30,7 +30,7 @@ demo.codetri.net {
 
 	log {
 		output file /var/log/caddy/codetri-playground.log
-		format console
+		format json
 	}
 
 	reverse_proxy 127.0.0.1:5000
@@ -72,7 +72,7 @@ vss365today.com {
 
 	log {
 		output file /var/log/caddy/vss365today.log
-		format console
+		format json
 	}
 
 	reverse_proxy 127.0.0.1:5002
@@ -89,7 +89,7 @@ api.vss365today.com {
 
 	log {
 		output file /var/log/caddy/vss365today-api.log
-		format console
+		format json
 	}
 
 	reverse_proxy 127.0.0.1:5003
@@ -105,7 +105,7 @@ static.vss365today.com {
 
 	log {
 		output file /var/log/caddy/vss365today-static.log
-		format console
+		format json
 	}
 
 	# Serve the rest of the files
