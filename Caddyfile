@@ -13,6 +13,8 @@ codetri.net {
 		hide .git
 	}
 
+	file_server /var/www/codetri/dl browse
+
 	handle_errors {
 		redir https://codetri.net/404.html
 	}
