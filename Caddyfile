@@ -16,7 +16,7 @@ codetri.net {
 	# Serve the site as a site
 	file_server {
 		root /var/www/codetri
-		hide .git
+		hide .*
 	}
 
 	handle_errors {
