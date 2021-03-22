@@ -8,12 +8,16 @@ codetri.net {
 		format json
 	}
 
+	# Serve the downloads folder as a browsable page
+	file_server /dl/ browse {
+		root /var/www/codetri
+	}
+
+	# Serve the site as a site
 	file_server {
 		root /var/www/codetri
 		hide .git
 	}
-
-	file_server /var/www/codetri/dl browse
 
 	handle_errors {
 		redir https://codetri.net/404.html
