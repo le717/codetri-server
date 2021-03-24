@@ -96,6 +96,8 @@ services:
       - DB_NAMES=vss365today
       - DB_DUMP_TARGET=/backup
       - NICE=true
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
     networks:
         - vss365today
 
