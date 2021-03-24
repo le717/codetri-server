@@ -81,6 +81,24 @@ services:
     networks:
       - vss365today
 
+  # Run a database backup at midnight every Sunday
+  mysql-backup:
+    image: databack/mysql-backup
+    container_name: mysql-backup
+    restart: unless-stopped
+    volumes:
+      - ../../vss365today/backup:/backup
+    environment:
+      - DB_DUMP_SAFECHARS=true
+      # - DB_DUMP_CRON=0 0 * * 0
+      - RUN_ONCE=true
+      - DB_SERVER=vss365today-db
+      - DB_NAMES=vss365today
+      - DB_DUMP_TARGET=/backup
+      - NICE=true
+    networks:
+        - vss365today
+
 networks:
   vss365today:
     driver: bridge
