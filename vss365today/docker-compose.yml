@@ -85,14 +85,12 @@ services:
   mysql-backup:
     image: databack/mysql-backup
     container_name: mysql-backup
-    # restart: unless-stopped
-    restart: never
+    restart: unless-stopped
     volumes:
       - ../../vss365today/backup:/backup
     environment:
       - DB_DUMP_SAFECHARS=true
-      # - DB_DUMP_CRON=0 0 * * 0
-      - RUN_ONCE=true
+      - DB_DUMP_CRON=0 0 * * 0
       - DB_SERVER=vss365today-db
       - DB_PORT=3306
       - DB_NAMES=vss365today
