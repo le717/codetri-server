@@ -15,7 +15,7 @@ services:
       - 127.0.0.1:5002:80
     environment:
       - FLASK_ENV=production
-      - DOCKER_SECRETS_PATH=/app/secrets
+      - SYS_VARS_PATH=/app/secrets
     entrypoint:
       - sh
       - ./run-app.sh
@@ -53,7 +53,7 @@ services:
       - /var/www/vss365today/downloads:/app/downloads
     environment:
       - FLASK_ENV=production
-      - DOCKER_SECRETS_PATH=/app/secrets
+      - SYS_VARS_PATH=/app/secrets
       - DOWNLOADS_PATH=/app/downloads
       - SCHEDULE_TIMES=["05 5", "25 5", "45 5", "05 6"]
     entrypoint:
