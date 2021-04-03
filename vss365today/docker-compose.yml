@@ -36,7 +36,7 @@ services:
       - 127.0.0.1:5003:80
     environment:
       - FLASK_ENV=production
-      - DOCKER_SECRETS_PATH=/app/secrets
+      - SYS_VARS_PATH=/app/secrets
     entrypoint:
       - sh
       - ./run-app.sh
