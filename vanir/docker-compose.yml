@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  web:
+    image: vanir-web:latest
+    container_name: vanir-web
+    restart: unless-stopped
+    volumes:
+      - /var/www/vanir/web/log:/var/log
+      - /var/www/vanir/secrets:/app/secrets
+    ports:
+      - 127.0.0.1:6002:80
+    environment:
+      - FLASK_ENV=production
+      - SYS_VARS_PATH=/app/secrets
+    networks:
+      - vanir
+
+  api:
+    image: vanir-api:latest
+    container_name: vanir-api
+    restart: unless-stopped
+    volumes:
+      - /var/www/vanir/api/log:/var/log
+      - /var/www/vanir/secrets:/app/secrets
+    ports:
+      - 127.0.0.1:6003:80
+    environment:
+      - FLASK_ENV=production
+      - SYS_VARS_PATH=/app/secrets
+    networks:
+      - vanir
+
+networks:
+  vanir:
+    driver: bridge
