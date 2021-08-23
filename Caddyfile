@@ -31,7 +31,6 @@ www.codetri.net {
 # --- CodeTri Playground
 demo.codetri.net {
 	header -server
-	header -x-powered-by
 	encode gzip
 
 	log {
@@ -45,7 +44,6 @@ demo.codetri.net {
 # --- CodeTri Blog
 blog.codetri.net {
 	header -server
-	header -x-powered-by
 	encode gzip
 
 	# Increase file upload size
@@ -59,6 +57,12 @@ blog.codetri.net {
 # --- CodeTri Podcast
 podcast.codetri.net {
 	redir https://anchor.fm/cely717 303
+}
+
+# --- CodeTri Webhook
+webhook.codetri.net {
+	header -server
+	reverse_proxy 127.0.0.1:6000
 }
 
 # -- fromabcthrough.xyz
