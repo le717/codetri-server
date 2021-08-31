@@ -55,7 +55,7 @@ services:
       - FLASK_ENV=production
       - SYS_VARS_PATH=/app/secrets
       - DOWNLOADS_PATH=/app/downloads
-      - SCHEDULE_TIMES=["05 4", "25 4", "45 4", "05 5"]
+      - SCHEDULE_TIMES=["05 11", "25 11", "45 11", "05 12"]
     entrypoint:
       - python
       - ./finder.py
