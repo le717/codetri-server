@@ -1,0 +1,14 @@
+# -- fromabcthrough.xyz
+fromabcthrough.xyz {
+	header -server
+	redir https://codetri.net{uri} permanent
+}
+www.fromabcthrough.xyz {
+	header -server
+	redir https://codetri.net{uri} permanent
+}
+
+# --- CodeTri Podcast
+podcast.codetri.net {
+	redir https://anchor.fm/cely717 303
+}
