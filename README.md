@@ -16,6 +16,6 @@ about it.
 
 Initial version by [Tribex](https://github.com/Tribex).
 
-2017-2021
+2017-2022
 
 [Unlicense](LICENSE)

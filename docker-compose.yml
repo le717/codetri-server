@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 services:
   codetriangle:
@@ -8,7 +8,6 @@ services:
     ports:
       - 127.0.0.1:5000:80
     volumes:
-      - ../codetriangle/main:/var/www/main
       - ../codetriangle/demo:/var/www/demo
 
   ghost:
