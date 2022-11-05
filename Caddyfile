@@ -54,6 +54,18 @@ blog.codetri.net {
 	reverse_proxy 127.0.0.1:5004
 }
 
+blog2.codetri.net {
+	header -server
+	encode gzip
+
+	# Increase file upload size
+	request_body {
+		max_size 100MB
+	}
+
+	reverse_proxy 127.0.0.1:5005
+}
+
 # --- CodeTri Webhook
 webhook.codetri.net {
 	header -server

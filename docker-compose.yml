@@ -31,7 +31,7 @@ services:
     ports:
       - 127.0.0.1:5005:2368
     volumes:
-    - ../ghost:/var/lib/ghost/content
+    - ../ghost5:/var/lib/ghost/content
     environment:
       NODE_ENV: production
       url: http://blog2.codetri.net
