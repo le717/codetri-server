@@ -57,7 +57,7 @@ services:
     environment:
       - MYSQL_USER=${DB_USERNAME}
       - MYSQL_PASSWORD=${DB_PASSWORD}
-      # - MYSQL_ROOT_PASSWORD=${DB_PASSWORD_ROOT}
+      - MYSQL_DATABASE=ghost
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     networks:
