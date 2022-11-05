@@ -62,4 +62,3 @@ webhook.codetri.net {
 
 # --- Additional sites
 import sites-available/redirects
-import sites-available/vanir
