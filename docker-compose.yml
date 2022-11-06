@@ -34,7 +34,7 @@ services:
     - ../ghost5:/var/lib/ghost/content
     environment:
       NODE_ENV: production
-      url: http://blog2.codetri.net
+      url: https://blog2.codetri.net
       database__client: mysql
       database__connection__host: database
       database__connection__user: ${DB_USERNAME}
