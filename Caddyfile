@@ -64,11 +64,8 @@ blog2.codetri.net {
 	}
 
 	reverse_proxy 127.0.0.1:5005 {
-		header_up X-Forwarded-Proto {scheme}
-
-		header {
-			X-Frame-Options SELF
-		}
+		# header_up X-Forwarded-Proto {scheme}
+		header_up X-Frame-Options SELF
 	}
 }
 
