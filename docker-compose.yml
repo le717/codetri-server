@@ -10,31 +10,17 @@ services:
     volumes:
       - ../playground:/var/www/html
 
-  # ghost:
-  #   image: ghost:4
-  #   container_name: ghost
-  #   restart: unless-stopped
-  #   ports:
-  #     - 127.0.0.1:5004:2368
-  #   volumes:
-  #   - ../ghost:/var/lib/ghost/content
-  #   environment:
-  #     NODE_ENV: production
-  #     url: http://blog.codetri.net
-  #   networks:
-  #     - codetri
-
   ghost5:
     image: ghost:5
     container_name: ghost5
     restart: unless-stopped
     ports:
-      - 127.0.0.1:5005:2368
+      - 127.0.0.1:5004:2368
     volumes:
     - ../ghost5:/var/lib/ghost/content
     environment:
       NODE_ENV: production
-      url: https://blog2.codetri.net
+      url: https://blog.codetri.net
       database__client: mysql
       database__connection__host: database
       database__connection__user: ${DB_USERNAME}
