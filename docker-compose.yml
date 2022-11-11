@@ -2,13 +2,14 @@ version: '3.8'
 
 services:
   codetriangle:
-    image: codetriangle:latest
-    container_name: codetriangle
+    # image: codetriangle:latest
+    image: php:8-fpm-alpine
+    container_name: playground
     restart: unless-stopped
     ports:
       - 127.0.0.1:5000:80
     volumes:
-      - ../codetriangle/demo:/var/www/demo
+      - ../playground:/var/www/html
 
   # ghost:
   #   image: ghost:4
