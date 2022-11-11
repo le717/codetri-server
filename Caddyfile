@@ -29,17 +29,6 @@ www.codetri.net {
 }
 
 # --- CodeTri Playground
-# demo.codetri.net {
-# 	header -server
-# 	encode gzip
-
-# 	log {
-# 		output file /var/log/caddy/codetri-playground.log
-# 		format json
-# 	}
-
-# 	reverse_proxy 127.0.0.1:5000
-# }
 demo.codetri.net {
 	header -server
 	encode gzip
