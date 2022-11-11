@@ -43,9 +43,11 @@ www.codetri.net {
 demo.codetri.net {
 	header -server
 	encode gzip
-	root * /var/www/playground
-	php_fastcgi 127.0.0.1:5000
-	file_server
+	reverse_proxy 127.0.0.1:5000
+
+	# root * /var/www/playground
+	# php_fastcgi 127.0.0.1:5000
+	# file_server
 }
 
 # --- CodeTri Blog
