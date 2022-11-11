@@ -44,8 +44,7 @@ demo.codetri.net {
 	header -server
 	encode gzip
 	root * /var/www/playground
-	encode gzip
-	php_fastcgi localhost:5000
+	php_fastcgi 127.0.0.1:5000
 	file_server
 }
 
