@@ -45,9 +45,7 @@ blog.codetri.net {
 		max_size 100MB
 	}
 
-	reverse_proxy 127.0.0.1:5004 {
-		header_up X-Frame-Options SELF
-	}
+	reverse_proxy 127.0.0.1:5004
 }
 
 # --- CodeTri Webhook
