@@ -1,4 +1,4 @@
--- CodeTri Notes
+# -- CodeTri Notes
 notes.codetri.net {
 	header -server
 	encode gzip
