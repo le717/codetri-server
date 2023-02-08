@@ -1,0 +1,16 @@
+-- CodeTri Notes
+notes.codetri.net {
+	header -server
+	encode gzip
+
+	log {
+		output file /var/log/caddy/ct-notes.log
+		format json
+	}
+
+	# Serve the site from the generated notes directory
+	file_server {
+		root /var/www/notes/generated
+		hide .*
+	}
+}

@@ -55,4 +55,5 @@ webhook.codetri.net {
 }
 
 # --- Additional sites
+import sites-available/notes
 import sites-available/redirects
