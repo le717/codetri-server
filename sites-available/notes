@@ -7,15 +7,14 @@ notes.codetri.net {
 		output file /var/log/caddy/ct-notes.log
 		format json
 	}
+
 	# Handle static files specially
-	file_server /static/ {
-		root /var/www/notes/static
-		hide .*
+	file_server /static/ browse {
+		root /var/www/notes
 	}
 
 	# Serve the site from the generated notes directory
 	file_server {
 		root /var/www/notes/generated
-		hide .*
 	}
 }

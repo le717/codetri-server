@@ -28,7 +28,7 @@ www.codetri.net {
 	redir https://codetri.net{uri} permanent
 }
 
-# --- CodeTri Playground
+# --- CodeTri Playground/
 demo.codetri.net {
 	header -server
 	encode gzip
