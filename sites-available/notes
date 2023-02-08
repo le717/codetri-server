@@ -13,4 +13,10 @@ notes.codetri.net {
 		root /var/www/notes/generated
 		hide .*
 	}
+
+	# Handle static files specially
+	file_server /static/ {
+		root /var/www/notes/static
+		hide .*
+	}
 }
