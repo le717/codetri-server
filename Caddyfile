@@ -28,11 +28,16 @@ www.codetri.net {
 	redir https://codetri.net{uri} permanent
 }
 
-# --- CodeTri Playground/
+# --- CodeTri Playground
 demo.codetri.net {
 	header -server
 	encode gzip
 	reverse_proxy 127.0.0.1:5000
+}
+api.demo.codetri.net {
+	header -server
+	encode gzip
+	reverse_proxy 127.0.0.1:5001
 }
 
 # --- CodeTri Blog

@@ -10,6 +10,16 @@ services:
     volumes:
       - ../playground:/var/www/html
 
+  rest-api:
+    image: rest_api:latest
+    container_name: rest-api
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:8000:5001
+    entrypoint:
+      - sh
+      - ./run-app.sh
+
   ghost5:
     image: ghost:5
     container_name: ghost5
