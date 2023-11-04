@@ -10,5 +10,5 @@ www.fromabcthrough.xyz {
 
 # --- CodeTri Podcast
 podcast.codetri.net {
-	redir https://anchor.fm/cely717 303
+	redir https://podcasters.spotify.com/pod/show/cely717 303
 }
