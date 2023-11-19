@@ -1,5 +1,5 @@
 # -- vss365 today archive
-vss.codetri.net {
+vss365today.codetri.net {
 	header -server
 	encode gzip
 	root * /var/www/vss365today
