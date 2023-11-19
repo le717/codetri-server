@@ -1,0 +1,30 @@
+# -- vss365 today archive
+vss.codetri.net {
+	header -server
+	encode gzip
+	root * /var/www/vss365today
+	file_server
+
+	# Logging
+	log {
+		output file /var/log/caddy/vss365today-notes.log
+		format json
+	}
+
+	# Create pretty URLs
+	try_files {path} {path}.html {path}/index.html =404
+
+	# Error handling
+	handle_errors {
+		@404 expression {http.error.status_code} == 404
+		handle @404 {
+			rewrite * /404.html
+			file_server
+		}
+
+		handle {
+			rewrite * /500.html
+			file_server
+		}
+	}
+}

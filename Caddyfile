@@ -59,16 +59,7 @@ webhook.codetri.net {
 	reverse_proxy 127.0.0.1:6000
 }
 
-vss.codetri.net {
-	header -server
-	encode gzip
-
-	file_server {
-		root /var/www/vss
-		hide .*
-	}
-}
-
 # --- Additional sites
 import sites-available/notes
 import sites-available/redirects
+import sites-available/vss365today
