@@ -1,11 +1,17 @@
 # -- fromabcthrough.xyz
 fromabcthrough.xyz {
 	header -server
-	redir https://codetri.net{uri} permanent
+	encode gzip
+
+	root * /var/www/fromabcthroughxyz
+	file_server
+	# redir https://codetri.net{uri} permanent
 }
 www.fromabcthrough.xyz {
 	header -server
-	redir https://codetri.net{uri} permanent
+
+	# redir https://codetri.net{uri} permanent
+	redir https://fromabcthrough.xyz{uri} permanent
 }
 
 # --- CodeTri Podcast
