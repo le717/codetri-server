@@ -40,26 +40,9 @@ api.demo.codetri.net {
 	reverse_proxy 127.0.0.1:5001
 }
 
-# --- CodeTri Blog
-blog.codetri.net {
-	header -server
-	encode gzip
-
-	# Increase file upload size
-	request_body {
-		max_size 100MB
-	}
-
-	reverse_proxy 127.0.0.1:5004
-}
-
-# --- CodeTri Webhook
-webhook.codetri.net {
-	header -server
-	reverse_proxy 127.0.0.1:6000
-}
-
 # --- Additional sites
+import sites-available/blog
 import sites-available/notes
 import sites-available/redirects
 import sites-available/vss365today
+import sites-available/webhook
