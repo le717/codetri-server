@@ -1,5 +1,5 @@
 # -- vss365 today archive
-vss365today.codetri.net {
+vss365today.com {
 	header -server
 	encode gzip
 	root * /var/www/vss365today
@@ -7,7 +7,7 @@ vss365today.codetri.net {
 
 	# Logging
 	log {
-		output file /var/log/caddy/vss365today-notes.log
+		output file /var/log/caddy/vss365today.log
 		format json
 	}
 

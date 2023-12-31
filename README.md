@@ -14,8 +14,8 @@ about it.
 
 ## License
 
-Initial version by [Tribex](https://github.com/Tribex).
+Initial nginx version by [Tribex](https://github.com/Tribex).
 
-2017-2022
+2017-2024
 
 [Unlicense](LICENSE)
