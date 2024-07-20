@@ -1,0 +1,14 @@
+jacobyarbrough.com {
+	header -server
+	encode gzip
+	root * /var/www/jacobyarbrough.com
+
+	file_server {
+		index jacob.png
+	}
+}
+
+www.jacobyarbrough.com {
+	header -server
+	redir https://jacobyarbrough.com{uri} permanent
+}
