@@ -44,5 +44,4 @@ api.demo.codetri.net {
 import sites-available/blog
 import sites-available/notes
 import sites-available/redirects
-import sites-available/vss365today
 import sites-available/webhook
