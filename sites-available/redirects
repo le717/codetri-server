@@ -14,6 +14,16 @@ www.fromabcthrough.xyz {
 	# redir https://fromabcthrough.xyz{uri} permanent
 }
 
+# -- calebely.net
+calebely.net {
+	header -server
+	redir https://codetri.net{uri} permanent
+}
+www.calebely.net {
+	header -server
+	redir https://codetri.net{uri} permanent
+}
+
 # --- CodeTri Podcast
 podcast.codetri.net {
 	redir https://podcasters.spotify.com/pod/show/cely717 303
