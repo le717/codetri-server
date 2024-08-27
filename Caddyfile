@@ -40,5 +40,4 @@ import sites-available/blog
 import sites-available/jacobyarbroughcom
 import sites-available/notes
 import sites-available/redirects
-# import sites-available/vss365today
 import sites-available/webhook

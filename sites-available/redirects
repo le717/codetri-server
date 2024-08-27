@@ -24,6 +24,16 @@ www.calebely.net {
 	redir https://codetri.net{uri} permanent
 }
 
+# -- #vss365 today redirect
+# vss365today.com {
+# 	header -server
+# 	redir https://vss365today.github.io{uri} permanent
+# }
+# www.vss365today.com {
+# 	header -server
+# 	redir https://vss365today.github.io{uri} permanent
+# }
+
 # --- CodeTri Podcast
 podcast.codetri.net {
 	redir https://podcasters.spotify.com/pod/show/cely717 303
