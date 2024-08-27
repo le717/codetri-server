@@ -1,13 +1,11 @@
 jacobyarbrough.com {
 	header -server
-	reverse_proxy 127.0.0.1:5001
+	encode gzip
+	root * /var/www/jacobyarbrough.com
 
-	# encode gzip
-	# root * /var/www/jacobyarbrough.com
-
-	# file_server {
-	# 	index jacob.png
-	# }
+	file_server {
+		index jacob.png
+	}
 }
 
 www.jacobyarbrough.com {
