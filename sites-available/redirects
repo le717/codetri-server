@@ -25,14 +25,14 @@ www.calebely.net {
 }
 
 # -- #vss365 today redirect
-# vss365today.com {
-# 	header -server
-# 	redir https://vss365today.github.io{uri} permanent
-# }
-# www.vss365today.com {
-# 	header -server
-# 	redir https://vss365today.github.io{uri} permanent
-# }
+vss365today.com {
+	header -server
+	redir https://vss365today.github.io{uri} permanent
+}
+www.vss365today.com {
+	header -server
+	redir https://vss365today.github.io{uri} permanent
+}
 
 # --- CodeTri Podcast
 podcast.codetri.net {
