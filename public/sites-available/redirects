@@ -1,0 +1,21 @@
+# -- fromabcthrough.xyz
+fromabcthrough.xyz {
+	header -server
+	redir https://calebely.net{uri} permanent
+}
+www.fromabcthrough.xyz {
+	header -server
+	redir https://calebely.net{uri} permanent
+}
+
+# -- #vss365 today redirect
+# TODO: Remove after January 8, 2025
+vss365today.com {
+	header -server
+	redir https://vss365today.github.io{uri} permanent
+}
+www.vss365today.com {
+	header -server
+	redir https://vss365today.github.io{uri} permanent
+}
+

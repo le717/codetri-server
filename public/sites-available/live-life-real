@@ -1,5 +1,10 @@
-# -- CodeTri Notes
-notes.codetri.net {
+# --- Podcast
+podcast.calebely.net {
+	redir https://podcasters.spotify.com/pod/show/cely717 303
+}
+
+# -- Notes
+notes.calebely.net {
 	header -server
 	encode gzip
 
@@ -15,6 +20,6 @@ notes.codetri.net {
 
 	# Serve the site from the generated notes directory
 	file_server {
-		root /var/www/notes/generated
+		root /var/www/notes/dist
 	}
 }

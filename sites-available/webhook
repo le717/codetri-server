@@ -1,5 +1,0 @@
-# --- CodeTri Webhook
-webhook.codetri.net {
-	header -server
-	reverse_proxy 127.0.0.1:6000
-}

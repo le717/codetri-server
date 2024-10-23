@@ -1,0 +1,35 @@
+# -- calebely.net
+calebely.net {
+	header -server
+	encode gzip
+
+	log {
+		output file /var/log/caddy/codetriangle.log
+		format json
+	}
+
+	# Serve the downloads folder as a browsable page
+	file_server /dl/ browse {
+		root /var/www/codetriangle
+	}
+
+	# Serve the rest of the static files as a site
+	file_server {
+		root /var/www/codetriangle
+		hide .*
+	}
+
+	handle_errors {
+		redir https://calebely.net/404.html
+	}
+}
+www.calebely.net {
+	header -server
+	redir https://calebely.net{uri} permanent
+}
+
+# --- Additional sites
+import sites-available/jacobyarbroughcom
+import sites-available/live-life-real
+import sites-available/redirects
+import sites-available/webhook
