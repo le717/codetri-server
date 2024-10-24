@@ -21,5 +21,6 @@ notes.calebely.net {
 	# Serve the site from the generated notes directory
 	file_server {
 		root /var/www/notes/dist
+		try_files {path}.html {path}
 	}
 }
