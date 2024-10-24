@@ -18,12 +18,18 @@ notes.calebely.net {
 		root /var/www/notes
 	}
 
-	redir /dist /dist/
-	handle_path /dist/* {
-		root * /var/www/notes/dist
+	root /var/www/notes/dist
+	handle_path * {
 		try_files {path} {path}.html
 		file_server
 	}
+
+	# redir /dist /dist/
+	# handle_path /dist/* {
+	# 	root * /var/www/notes/dist
+	# 	 try_files {path} {path}.html
+	# 	file_server
+	# }
 
 	# Serve the site from the generated notes directory
 	# file_server {
