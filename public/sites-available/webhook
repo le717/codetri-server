@@ -1,6 +1,5 @@
 # --- CodeTri Webhook
-# TODO: Change to codetri.net once 4.0 server is gone
-webhook.calebely.net {
+webhook.codetri.net {
 	header -server
 	reverse_proxy 127.0.0.1:6000
 }
