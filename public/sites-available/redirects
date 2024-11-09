@@ -33,3 +33,9 @@ www.codetri.net {
 podcast.codetri.net {
 	redir https://podcasters.spotify.com/pod/show/cely717 303
 }
+
+# --- Live Life Real blog
+blog.codetri.net {
+	header -server
+	redir https://blog.calebely.net permanent
+}
