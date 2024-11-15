@@ -5,21 +5,29 @@ podcast.calebely.net {
 
 # -- Notes
 blog.calebely.net {
+	# Don't reveal server info
 	header -server
-	encode gzip
+
+	# Compress files on the fly
+	encode zstd gzip
+
+	# Define the server root
+	root * /var/www/notes/dist
+
+	# Allow .md file extensions to be served as normal files.
+	# This is to allow inter-blog links while generator v2 is being developed.
+	# TODO: Remove this once generator v2 is done
+	uri strip_suffix .md
+
+	# Make the index loadable (don't ask why this is needed, it just is)
+	rewrite / index
+
+	# Serve the site
+	try_files {path}.html {path} =404
+	file_server
 
 	log {
 		output file /var/log/caddy/ct-notes.log
 		format json
-	}
-
-	# Handle static files specially
-	file_server /static/ browse {
-		root /var/www/notes
-	}
-
-	# Serve the site from the generated notes directory
-	file_server {
-		root /var/www/notes/dist
 	}
 }
