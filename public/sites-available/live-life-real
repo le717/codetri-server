@@ -14,11 +14,6 @@ blog.calebely.net {
 	# Define the server root
 	root * /var/www/notes/dist
 
-	# Allow .md file extensions to be served as normal files.
-	# This is to allow inter-blog links while generator v2 is being developed.
-	# TODO: Remove this once generator v2 is done
-	uri strip_suffix .md
-
 	# Make the index loadable (don't ask why this is needed, it just is)
 	rewrite / index
 
