@@ -6,6 +6,11 @@ jacobyarbrough.com {
 	file_server {
 		index jacob.png
 	}
+
+	log {
+		output file /var/log/caddy/jacobyarbroughcom.log
+		format json
+	}
 }
 
 www.jacobyarbrough.com {

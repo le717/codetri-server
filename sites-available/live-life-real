@@ -9,7 +9,7 @@ blog.calebely.net {
 	header -server
 
 	# Compress files on the fly
-	encode zstd gzip
+	encode gzip zstd
 
 	# Define the server root
 	root * /var/www/notes/dist
