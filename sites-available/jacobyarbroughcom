@@ -1,7 +1,7 @@
 jacobyarbrough.com {
 	header -server
 	encode gzip
-	root * /var/www/jacobyarbrough.com
+	root * /var/www/jacobyarbroughcom
 
 	file_server {
 		index jacob.png
