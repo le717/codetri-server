@@ -22,8 +22,10 @@ blog.calebely.net {
 	file_server
 
 	handle_errors 404 {
-		respond  404.html
+		# respond  404.html
 		# "It's a 404 error!"
+		rewrite * /404.html
+		file_server
 	}
 
 	log {
