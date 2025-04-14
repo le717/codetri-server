@@ -1,5 +1,5 @@
-# -- calebely.net
-calebely.net {
+# -- codetri.net
+codetri.net {
 	header -server
 	encode gzip
 
@@ -20,12 +20,12 @@ calebely.net {
 	}
 
 	handle_errors {
-		redir https://calebely.net/404.html
+		redir https://codetri.net/404.html
 	}
 }
-www.calebely.net {
+www.codetri.net {
 	header -server
-	redir https://calebely.net{uri} permanent
+	redir https://codetri.net{uri} permanent
 }
 
 # --- Additional sites

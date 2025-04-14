@@ -1,30 +1,30 @@
 # -- fromabcthrough.xyz
 fromabcthrough.xyz {
 	header -server
-	redir https://calebely.net{uri} permanent
+	redir https://codetri.net{uri} permanent
 }
 www.fromabcthrough.xyz {
 	header -server
-	redir https://calebely.net{uri} permanent
+	redir https://codetri.net{uri} permanent
 }
 
-# -- CodeTri.net
-codetri.net {
+# -- calebely.net
+calebely.net {
 	header -server
-	redir https://calebely.net{uri} permanent
+	redir https://codetri.net{uri} permanent
 }
-www.codetri.net {
+www.calebely.net {
 	header -server
-	redir https://calebely.net{uri} permanent
+	redir https://codetri.net{uri} permanent
 }
 
-# --- CodeTri Podcast
-podcast.codetri.net {
-	redir https://podcasters.spotify.com/pod/show/cely717 303
+# --- Live Life Real podcast
+podcast.calebely.net {
+	redir https://podcast.codetri.net 303
 }
 
 # --- Live Life Real blog
-blog.codetri.net {
+blog.calebely.net {
 	header -server
-	redir https://blog.calebely.net permanent
+	redir https://blog.codetri.net{uri} permanent
 }

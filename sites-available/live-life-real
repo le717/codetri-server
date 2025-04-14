@@ -1,10 +1,10 @@
 # --- Podcast
-podcast.calebely.net {
-	redir https://podcasters.spotify.com/pod/show/cely717 303
+podcast.codetri.net {
+	redir https://creators.spotify.com/pod/profile/cely717/ 303
 }
 
 # -- Notes
-blog.calebely.net {
+blog.codetri.net {
 	# Don't reveal server info
 	header -server
 
